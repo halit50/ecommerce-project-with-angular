@@ -1,0 +1,33 @@
+.navbar {
+  height: 50px;
+  background-color: greenyellow;
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+}
+
+.navbar_title {
+
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  font-size: 26px;
+}
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  display: inline;
+  margin: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar .navbar_list {
+    display: none!important;
+  }
+}
