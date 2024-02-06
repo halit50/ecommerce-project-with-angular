@@ -16,5 +16,10 @@
   flex-wrap: wrap;
 }
 
+.container
+{
+  min-height: 70vh;
+  background-color: #efefef;
+}
 
 
