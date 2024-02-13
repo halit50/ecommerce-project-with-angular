@@ -5,11 +5,17 @@
 .product-item{
   text-align: center;
   border: 0.1px solid #ccc;
-  width: 300px;
+  width: 400px;
+  height: 540px;
   cursor: pointer;
 }
 .product-item .product-details .product-price{
   display: flex;
   gap: 20px;
   justify-content: center;
+}
+
+.product-item .product-image img {
+  width: 400px;
+  height: 400px;
 }
