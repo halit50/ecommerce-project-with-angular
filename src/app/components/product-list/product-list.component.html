@@ -1,4 +1,11 @@
 <div class="product-list">
-  <app-product-item [product]=""></app-product-item>
+    <app-product-item
+    *ngFor="let product of products"
+    [product]="product"
+    (deleteProductItem)="handleDeleteProduct($event)">
+  </app-product-item>
+  <div class="bar" *ngIf="!products.length">
+    Aucun article dispo !
+</div>
 </div>
 

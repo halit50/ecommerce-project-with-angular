@@ -1,15 +1,13 @@
-<div class="product-item">
+<div class="product-item" (click)="deleteProduct(product)">
   <div class="product-image">
     <img
     [src]="product ? product.imageUrl[0] : ''"
-    height="300"
-    width="300"
-    alt=""
+    [alt]="product?.name"
     >
   </div>
   <div class="product-details">
     <div class="product-name">
-      <h2>{{ product?.name }}</h2>
+      <h2>{{ product?.name?.substring(0,40) }} {{ product && product.name[41] ? '...' : null}}</h2>
     </div>
     <div class="product-price">
       <h3>€ {{ (product?.sold_price || 0 )/100 }}</h3>
