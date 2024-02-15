@@ -3,3 +3,37 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.aic {
+  align-items: center;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.btn {
+  height: 40px;
+  min-width: 150px;
+  padding: 10px 0;
+  margin: 10px 0;
+  outline: none;
+  cursor: pointer;
+  color: black;
+}

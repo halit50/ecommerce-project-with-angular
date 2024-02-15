@@ -11,6 +11,10 @@ export class ProductListComponent implements OnInit {
 
   products: Product[] = []
 
+  isDisplayModal: boolean = false;
+
+  modalProduct: Product | undefined;
+
   constructor() {
   }
 
@@ -208,6 +212,18 @@ export class ProductListComponent implements OnInit {
   handleDeleteProduct(product: Product){
     console.log('handleDeleteProduct', product);
     this.products = this.products.filter(p => p._id !== product._id)
+  }
+
+  handleDisplayProductViewModal(product: Product){
+    if (product){
+      this.isDisplayModal = true;
+      this.modalProduct = product
+    }
+  }
+
+  handleCloseViewModal(){
+    this.isDisplayModal = false;
+    this.modalProduct = undefined
   }
 
 }

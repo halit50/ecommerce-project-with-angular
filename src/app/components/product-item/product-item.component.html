@@ -1,4 +1,4 @@
-<div class="product-item" (click)="deleteProduct(product)">
+<div class="product-item" (click)="handleClickProduct(product)">
   <div class="product-image">
     <img
     [src]="product ? product.imageUrl[0] : ''"
@@ -18,3 +18,5 @@
     </div>
   </div>
 </div>
+
+
