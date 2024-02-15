@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Product } from 'src/app/models/product';
+import { ProductModalComponent } from '../product-modal/product-modal.component';
 
 @Component({
   selector: 'app-product-item',
@@ -12,6 +13,8 @@ export class ProductItemComponent implements OnInit {
 
   @Output() deleteProductItem: EventEmitter<Product> = new EventEmitter<Product>()
 
+  @Output() displayProductViewModal:EventEmitter<Product> = new EventEmitter<Product>();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -19,11 +22,11 @@ export class ProductItemComponent implements OnInit {
   }
 
   handleClickProduct(product: Product | undefined){
-    console.log(product);
+    this.displayProductViewModal.emit(product)
   }
 
   deleteProduct(product: Product | undefined){
-      this.deleteProductItem.emit(product)
+      //this.deleteProductItem.emit(product)
   }
 
 }
