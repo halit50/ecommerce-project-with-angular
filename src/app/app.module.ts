@@ -10,6 +10,9 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductModalComponent } from './components/product-modal/product-modal.component';
+import { SigninComponent } from './components/auth/signin/signin.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,11 +24,14 @@ import { ProductModalComponent } from './components/product-modal/product-modal.
     ProductComponent,
     ProductItemComponent,
     ProductListComponent,
-    ProductModalComponent
+    ProductModalComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
