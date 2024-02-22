@@ -1,0 +1,22 @@
+<div class="signup">
+  <div class="form-container">
+    <form action="">
+      <h2>Inscription</h2>
+      <div class="form-line flex first-last-name">
+        <input type="text" name="firstname" placeholder="Your firstname ..." [(ngModel)]="user.firstname">
+        <input type="text" name="lastname" placeholder="Your lastname..." [(ngModel)]="user.lastname">
+      </div>
+      <div class="form-line flex">
+        <input class="flex-1" type="email" name="email" placeholder="Your email please..." [(ngModel)]="user.email">
+      </div>
+      <div class="form-line flex">
+        <input class="flex-1" type="password" name="password" placeholder="Your password please..." [(ngModel)]="user.password">
+      </div>
+      <div class="form-line flex">
+        <input class="flex-1" type="password" name="passwordConfirm" placeholder="Confirm your password...">
+      </div>
+
+      <button (click)="handleSaveUser()">S'inscrire</button>
+    </form>
+  </div>
+</div>
