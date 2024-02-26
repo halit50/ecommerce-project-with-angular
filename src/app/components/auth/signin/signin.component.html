@@ -1,14 +1,30 @@
 <div class="signin">
   <div class="form-container">
-    <form action="">
+    <form action="" [formGroup]="signinForm">
       <h2>Connexion</h2>
       <div class="form-line flex">
-        <input class="flex-1" type="email" name="email" placeholder="Your email please..." [(ngModel)]="user.email">
+        <input class="flex-1" type="email" [formControl]="email" name="email" placeholder="Your email please...">
+      </div>
+      <div class="error" *ngIf="email.dirty && !email.valid">
+        <p *ngIf="email.hasError('required')">
+          L'email est requis
+        </p>
+        <p *ngIf="!email.hasError('required')">
+          L'email n'est pas valide
+        </p>
       </div>
       <div class="form-line flex">
-        <input class="flex-1" type="password" name="password" placeholder="Your password please..." [(ngModel)]="user.password">
+        <input class="flex-1" type="password" [formControl]="password" name="password" placeholder="Your password please...">
       </div>
-      <button (click)="handleSubmit()">Se connecter</button>
+      <div class="error" *ngIf="password.dirty && !password.valid">
+        <p *ngIf="password.hasError('minlength')">
+          Le mot de passe n'a pas la longueur requise
+        </p>
+        <p *ngIf="password.hasError('required')">
+          Le mot de passe est requis
+        </p>
+      </div>
+      <button [disabled]="!this.signinForm.valid" (click)="handleSubmit()">Se connecter</button>
     </form>
   </div>
 </div>

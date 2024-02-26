@@ -1,22 +1,54 @@
 <div class="signup">
   <div class="form-container">
-    <form action="">
+    <form action="" [formGroup]="signupForm">
       <h2>Inscription</h2>
       <div class="form-line flex first-last-name">
-        <input type="text" name="firstname" placeholder="Your firstname ..." [(ngModel)]="user.firstname">
-        <input type="text" name="lastname" placeholder="Your lastname..." [(ngModel)]="user.lastname">
+        <input type="text" [formControl]="firstname" name="firstname" placeholder="Your firstname ..." >
+        <input type="text" [formControl]="lastname" name="lastname" placeholder="Your lastname...">
+      </div>
+      <div class="error" *ngIf="firstname.dirty && !firstname.valid">
+        <p *ngIf="firstname.hasError('minlength')">
+          Le prénom n'est pas valide
+        </p>
+        <p *ngIf="firstname.hasError('required')">
+          Le prénom est requis
+        </p>
+      </div>
+      <div class="error" *ngIf="lastname.dirty && !lastname.valid">
+        <p *ngIf="lastname.hasError('minlength')">
+          Le nom de famille n'est pas valide
+        </p>
+        <p *ngIf="lastname.hasError('required')">
+          Le nom de famille est requis
+        </p>
       </div>
       <div class="form-line flex">
-        <input class="flex-1" type="email" name="email" placeholder="Your email please..." [(ngModel)]="user.email">
+        <input class="flex-1" type="email" [formControl]="email" name="email" placeholder="Your email please...">
+      </div>
+      <div class="error" *ngIf="email.dirty && !email.valid">
+        <p *ngIf="!email.hasError('required')">
+          L'email n'est pas valide
+        </p>
+        <p *ngIf="email.hasError('required')">
+          L'email est requis
+        </p>
       </div>
       <div class="form-line flex">
-        <input class="flex-1" type="password" name="password" placeholder="Your password please..." [(ngModel)]="user.password">
+        <input class="flex-1" type="password" [formControl]="password" name="password" placeholder="Your password please...">
+      </div>
+      <div class="error" *ngIf="password.dirty && !password.valid">
+        <p *ngIf="password.hasError('minlength')">
+          Le mot de passe n'est pas valide
+        </p>
+        <p *ngIf="password.hasError('required')">
+          Le mot de passe est requis
+        </p>
       </div>
       <div class="form-line flex">
         <input class="flex-1" type="password" name="passwordConfirm" placeholder="Confirm your password...">
       </div>
 
-      <button (click)="handleSaveUser()">S'inscrire</button>
+      <button [disabled]="!this.signupForm.valid" (click)="handleSaveUser()">S'inscrire</button>
     </form>
   </div>
 </div>
