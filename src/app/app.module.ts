@@ -12,7 +12,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductModalComponent } from './components/product-modal/product-modal.component';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
